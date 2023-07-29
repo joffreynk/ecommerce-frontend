@@ -1,6 +1,8 @@
-import './globals.css'
 import type { Metadata } from 'next'
 import { Urbanist } from 'next/font/google'
+
+import Footer from '@/components/Footer'
+import './globals.css'
 
 const fonts = Urbanist({ subsets: ['latin'] })
 
@@ -16,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={fonts.className}>{children}</body>
+      <body className={`${fonts.className}`}>
+        {children}
+        <Footer />
+        </body>
     </html>
   )
 }
