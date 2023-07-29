@@ -5,6 +5,8 @@ import MainaNav from '@/components/MainaNav'
 import NavBarActions from '@/components/navBarActions'
 import getCategories from '@/actions/getCategories'
 
+export const revalidate = 0
+
 export default async function NavBar() {
 const categories = await getCategories()
 
