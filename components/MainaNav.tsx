@@ -1,6 +1,6 @@
 'use client'
 
-import { Category } from '@/ypes';
+import { Category } from '@/types';
 import Link from 'next/link';
 import  {usePathname} from 'next/navigation'
 
