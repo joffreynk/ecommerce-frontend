@@ -17,6 +17,8 @@ function NavBar() {
             {id: 1, name: 'text1'},
             {id: 1, name: 'text1'}
           ]} />
+
+          <p></p>
         </div>
       </Container>
     </div>
