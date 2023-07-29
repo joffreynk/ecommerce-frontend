@@ -1,7 +1,8 @@
 import Link from 'next/link'
 
 import Container from '@/components/ui/Container'
-import MainaNav from './MainaNav'
+import MainaNav from '@/components/MainaNav'
+import NavBarActions from '@/components/navBarActions'
 import getCategories from '@/actions/getCategories'
 
 export default async function NavBar() {
@@ -15,6 +16,7 @@ const categories = await getCategories()
             <p className='font-bold text-lg'>Quicky</p>
           </Link>
           <MainaNav data={categories} />
+        <NavBarActions />
         </div>
       </Container>
     </div>
