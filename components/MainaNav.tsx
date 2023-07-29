@@ -1,19 +1,10 @@
 'use client'
 
+import { Category } from '@/ypes';
 import Link from 'next/link';
 import  {usePathname} from 'next/navigation'
-interface MainNavProps {
-  data: any;
-}
 
-// {
-//   label: string;
-//   href: string;
-//   active: boolean;
-
-// }
-
-const MainaNav = ({data}: {data: MainNavProps}) => {
+const MainaNav = ({data}: {data: Category[]}) => {
 
   const path = usePathname()
 
