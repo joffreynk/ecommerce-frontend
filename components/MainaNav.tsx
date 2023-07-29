@@ -30,6 +30,7 @@ const MainaNav = ({data}: {data: MainNavProps}) => {
           <Link 
           key={route.href}
           href={route.href}
+          className={`text-sm font-medium transition-colors hover:black ${route.active? " text-black ": " text-neutral-500"}`}
           >
             {route.label}
           </Link>
