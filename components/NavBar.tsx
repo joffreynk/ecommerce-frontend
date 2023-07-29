@@ -11,7 +11,12 @@ function NavBar() {
           <Link href='/' className='ml-4 flex lg:ml-0 gap-x-2'>
             <p className='font-bold text-lg'>Quicky</p>
           </Link>
-          <MainaNav />
+          <MainaNav data={[
+            {id: 1, name: 'text1'},
+            {id: 1, name: 'text1'},
+            {id: 1, name: 'text1'},
+            {id: 1, name: 'text1'}
+          ]} />
         </div>
       </Container>
     </div>
