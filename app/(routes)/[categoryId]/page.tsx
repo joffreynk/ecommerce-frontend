@@ -1,7 +1,6 @@
 import getProducts from '@/actions/getProducts';
 import ProductList from '@/components/ProductList';
 import Container from '@/components/ui/Container';
-import React from 'react'
 
 const ProductCategory = async({params}: {params: {categoryId: string}}) => {
   const products = await getProducts({
