@@ -27,7 +27,10 @@ const SingleProduct = async({params}: {params: {productId: string}}) => {
           </div>
         </div>
         <hr className='my-10 w-full' />
+        <div className='max-h-[600px]'>
+
         <ProductList title={`${product?.category?.name}'s related products`} items={products} />
+        </div>
       </div>
     </div>
   </Container>
