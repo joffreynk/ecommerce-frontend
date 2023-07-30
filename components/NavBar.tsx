@@ -1,26 +1,26 @@
-import Link from 'next/link'
+import Link from "next/link";
 
-import Container from '@/components/ui/Container'
-import MainaNav from '@/components/MainaNav'
-import NavBarActions from '@/components/navBarActions'
-import getCategories from '@/actions/getCategories'
+import Container from "@/components/ui/Container";
+import MainaNav from "@/components/MainaNav";
+import NavBarActions from "@/components/navBarActions";
+import getCategories from "@/actions/getCategories";
 
-export const revalidate = 0
+export const revalidate = 0;
 
 export default async function NavBar() {
-const categories = await getCategories()
+  const categories = await getCategories();
 
   return (
-    <div className='border-b'>
-      <Container >
-        <div className='relative px-4 sm:px-6 lg:px-8 flex h-16 items-center'>
-          <Link href='/' className='ml-4 flex lg:ml-0 gap-x-2'>
-            <p className='font-bold text-lg'>Quicky</p>
+    <div className="border-b">
+      <Container>
+        <div className="relative px-4 sm:px-6 lg:px-8 flex   h-16 items-center">
+          <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
+            <p className="font-bold text-lg">Quicky</p>
           </Link>
           <MainaNav data={categories} />
-        <NavBarActions />
+          <NavBarActions />
         </div>
       </Container>
     </div>
-  )
+  );
 }
