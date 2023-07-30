@@ -18,19 +18,16 @@ const SingleProduct = async({params}: {params: {productId: string}}) => {
        <Container>
     <div className="px-4 py-10 sm:px-6 lg:px-8">
       <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-        <div className=' grid lg:grid-cols-2 lg:items-start lg:gap-x-8'>
+        <div className='grid lg:grid-cols-2 lg:items-start lg:gap-x-8'>
           {/* Gallery */}
           <Gallery images={product.images} />
           <div>
             {/* Info */}
-            Info
+            <ProductInfo data={product} />
           </div>
         </div>
         <hr className='my-10 w-full' />
-        <div className='max-h-[600px]'>
-
         <ProductList title={`${product?.category?.name}'s related products`} items={products} />
-        </div>
       </div>
     </div>
   </Container>
