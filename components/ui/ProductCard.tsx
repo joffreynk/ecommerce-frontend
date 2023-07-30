@@ -6,6 +6,7 @@ import React from 'react'
 import IconButton from './IconButton'
 import { Expand, ShoppingCart } from 'lucide-react'
 import { formatter } from '@/utils'
+import Currency from './Currency'
 
 function ProductCard({data}: {data: Product}) {
   return ( 
@@ -35,7 +36,7 @@ function ProductCard({data}: {data: Product}) {
         <p className='font-semibold text-lg'>{data.name}</p>
         <p className='text-sm text-gray-500'>{data.category.name}</p>
       </div>
-      <p className='font-semibold self-center'>{formatter.format(Number(data.price))}</p>
+      <Currency price={data.price} />
     </div>
     </div>
   )
