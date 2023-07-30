@@ -2,7 +2,7 @@ import getProducts from '@/actions/getProducts';
 import getproduct from '@/actions/getproduct';
 import ProductList from '@/components/ProductList'
 import Container from '@/components/ui/Container'
-import React from 'react'
+import Gallery from '@/components/Gallery';
 
 const SingleProduct = async({params}: {params: {productId: string}}) => {
 
@@ -16,8 +16,17 @@ const SingleProduct = async({params}: {params: {productId: string}}) => {
 
   return (
        <Container>
-    <div className="space-y-10 pb-10 lg:pb-16">
+    <div className="px-4 py-10 sm:px-6 lg:px-8">
       <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
+        <div className=' grid lg:grid-cols-2 lg:items-start lg:gap-x-8'>
+          {/* Gallery */}
+          <Gallery images={product.images} />
+          <div>
+            {/* Info */}
+            Info
+          </div>
+        </div>
+        <hr className='my-10 w-full' />
         <ProductList title={`${product?.category?.name}'s related products`} items={products} />
       </div>
     </div>
