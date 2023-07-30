@@ -3,6 +3,7 @@ import getproduct from '@/actions/getproduct';
 import ProductList from '@/components/ProductList'
 import Container from '@/components/ui/Container'
 import Gallery from '@/components/Gallery';
+import ProductInfo from '@/components/ProductInfo';
 
 const SingleProduct = async({params}: {params: {productId: string}}) => {
 
