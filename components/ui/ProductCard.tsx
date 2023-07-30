@@ -5,12 +5,16 @@ import Image from 'next/image'
 import React from 'react'
 import IconButton from './IconButton'
 import { Expand, ShoppingCart } from 'lucide-react'
-import { formatter } from '@/utils'
 import Currency from './Currency'
+import { useRouter } from 'next/navigation'
 
 function ProductCard({data}: {data: Product}) {
+const router = useRouter()
+  const viewPeoduct = ()=>{
+    router.push(`/${data?.category?.name}/${data?.id}`)
+  }
   return ( 
-    <div className='bg-white group cursor-pointer rounded-xl border p-3 space-y-4'>
+    <div onClick={viewPeoduct} className='bg-white group cursor-pointer rounded-xl border p-3 space-y-4'>
       {/* product  images and actions */}
          <div className='aspect-square rounded-xl bg-gray-100 relative'>
             <Image src={data.images[0].url} alt='product picture' fill
