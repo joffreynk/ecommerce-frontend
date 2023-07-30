@@ -2,10 +2,22 @@ import getProducts from '@/actions/getProducts';
 import ProductList from '@/components/ProductList';
 import Container from '@/components/ui/Container';
 
-const ProductCategory = async({params}: {params: {categoryId: string}}) => {
+interface CatgoryProps {
+  params: {categoryId: string},
+  searchParams: {
+    colorId: string,
+    sizeId: string,
+  }
+}
+
+const ProductCategory = async({params, searchParams}: CatgoryProps) => {
+  
   const products = await getProducts({
-    categoryId: params.categoryId
+    categoryId: params.categoryId,
+    sizeId: searchParams.sizeId,
+    colorId: searchParams.colorId,
   });
+
   return (
     <Container>
     <div className="space-y-10 pb-10 lg:pb-16">
