@@ -1,7 +1,6 @@
 import qs from 'query-string'
 
 import { Product } from "@/types";
-import queryString from 'query-string';
 
 const URL = `${process.env.NEXT_STORE_PUBLIC_API}/products`;
 

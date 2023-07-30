@@ -1,6 +1,8 @@
 import React from 'react'
 
-const SingleProduct = () => {
+const SingleProduct = ({params}: {params: {productId: string}}) => {
+
+  
   return (
     <div>
       single product

@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation'
 function ProductCard({data}: {data: Product}) {
 const router = useRouter()
   const viewPeoduct = ()=>{
-    router.push(`/${data?.category?.name}/${data?.id}`)
+    router.push(`/${data?.category?.id}/${data?.id}`)
   }
   return ( 
     <div onClick={viewPeoduct} className='bg-white group cursor-pointer rounded-xl border p-3 space-y-4'>
