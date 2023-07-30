@@ -3,7 +3,7 @@ import qs from 'query-string'
 import { Product } from "@/types";
 import queryString from 'query-string';
 
-const URL = `${process.env.NEXT_STORE_PUBLIC_API}/categories`;
+const URL = `${process.env.NEXT_STORE_PUBLIC_API}/products`;
 
 interface Query {
   categoryId?: string;
@@ -12,7 +12,7 @@ interface Query {
   isFeatured?: boolean;
 }
 
-const getCatgories = async (query: Query): Promise<Product[]> => {
+const getProducts = async (query: Query): Promise<Product[]> => {
 
   const url = qs.stringifyUrl({
     url: URL,
@@ -30,4 +30,4 @@ const getCatgories = async (query: Query): Promise<Product[]> => {
   return data;
 };
 
-export default getCatgories;
+export default getProducts;
