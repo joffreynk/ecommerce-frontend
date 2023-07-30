@@ -25,7 +25,7 @@ const ProductInfo = ({data}: {data: Product}) => {
             </div>
             <div className='flex items-center gap-x-6'>
                 <h3 className='font-semibold text-black'>Color:</h3>
-                <div className='w-8 h-8 rounded-full border'  />
+                <div className='w-8 h-8 rounded-full border' style={{background: `${data.color.value}`}}  />
             </div>
         </div>
         <hr className='my-4' />
