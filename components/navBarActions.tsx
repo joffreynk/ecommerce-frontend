@@ -15,9 +15,9 @@ export default function NavBarActions() {
 
   return (
     <div className="ml-auto flex items-center gap-x-4">
-      <Button className="flex gap-1 items-center rounded-full bg-slate-900">
+      <Button className="flex gap-1 items-center p-2 rounded-full bg-slate-900">
         <ShoppingBag
-          size={20}
+          size={25}
           color="white"
          />
          <span className="text-md font-medium  text-gray-50">10</span>
