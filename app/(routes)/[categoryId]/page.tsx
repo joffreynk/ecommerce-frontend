@@ -38,7 +38,7 @@ const ProductCategory = async({params, searchParams}: CatgoryProps) => {
         <Filter valueKey='colorId' name='colors' data={colors} />
 
         <Filter valueKey='sizeId' name='Sizes' data={sizes} />
-        <ProductList title="Products" items={products} />
+        <ProductList title={`${category.name} Products`} items={products} />
       </div>
     </div>
   </Container>

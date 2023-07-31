@@ -15,12 +15,12 @@ export default function NavBarActions() {
 
   return (
     <div className="ml-auto flex items-center gap-x-4">
-      <Button className="flex relative items-center rounded-full bg-slate-900">
+      <Button className="flex gap-1 items-center rounded-full bg-slate-900">
         <ShoppingBag
-          size={25}
+          size={20}
           color="white"
          />
-         <span className="text-md font-medium absolute text-gray-50 right-[6px] top-1">10</span>
+         <span className="text-md font-medium  text-gray-50">10</span>
       </Button>
     </div>
   );

@@ -15,7 +15,7 @@ const MainaNav = ({data}: {data: Category[]}) => {
   }))
 
   return (
-    <nav className='mx-6 ml-40 flex items-center space-x-4 lg:space-x-6'>
+    <nav className='mx-6 flex items-center space-x-4 lg:space-x-6'>
       {
         routes.map((route: any)=>(
           <Link 
