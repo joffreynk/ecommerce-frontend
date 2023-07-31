@@ -1,6 +1,7 @@
 import getCatgory from '@/actions/getCategory';
 import getColors from '@/actions/getColors';
 import getProducts from '@/actions/getProducts';
+import getSizes from '@/actions/getSizes';
 import BillboardPage from '@/components/Billboard';
 import ProductList from '@/components/ProductList';
 import Container from '@/components/ui/Container';
@@ -24,6 +25,7 @@ const ProductCategory = async({params, searchParams}: CatgoryProps) => {
 
   const category = await getCatgory(params.categoryId)
   const colors = await getColors();
+  const sizes = await getSizes();
 
   return (
     <Container>
@@ -34,6 +36,8 @@ const ProductCategory = async({params, searchParams}: CatgoryProps) => {
     </div>
       <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
         <Filter valueKey='colorId' name='colors' data={colors} />
+
+        <Filter valueKey='sizeId' name='Sizes' data={sizes} />
         <ProductList title="Products" items={products} />
       </div>
     </div>

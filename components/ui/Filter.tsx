@@ -35,10 +35,10 @@ const Filter = ({data, name, valueKey}: FilterProps) => {
     const selectedValue = searchparams.get(valueKey);
     
   return (
-    <div className="mb-8">
+    <div className="">
         <h3 className="text-lg font-semibold">{name}</h3>
         <hr />
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-2">
             {
                 data.map(item=>(
                     <div key={item.id} className="flex items-center">
