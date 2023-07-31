@@ -5,6 +5,7 @@ import qs from 'query-string'
 
 import { Color, Size } from "@/types"
 import IconButton from "./IconButton";
+import Button from "./Button";
 
 interface FilterProps {
     data: (Size | Color)[];
@@ -14,26 +15,25 @@ interface FilterProps {
 const Filter = ({data, name, valueKey}: FilterProps) => {
     const searchparams = useSearchParams();
     const router = useRouter();
-    const selectedValue = searchparams.get(valueKey);
-
-
     const onClick = (id: string)=>{
         const current = qs.parse(searchparams.toString());
+
         const query = {
             ...current,
-            valueKey: id,
+            [valueKey]: id,
         }
         if(current[valueKey] === id){
             query[valueKey] = null;
         }
-
+        
         const url = qs.stringifyUrl({
             url: window.location.href,
             query
         }, {skipNull: true});
-
         router.push(url);
     }
+    const selectedValue = searchparams.get(valueKey);
+    
   return (
     <div className="mb-8">
         <h3 className="text-lg font-semibold">{name}</h3>
@@ -42,13 +42,12 @@ const Filter = ({data, name, valueKey}: FilterProps) => {
             {
                 data.map(item=>(
                     <div key={item.id} className="flex items-center">
-                        <IconButton
-                        className={`rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300 ${selectedValue=== item.id && "bg-black text-white"}`}
-
+                        <Button
+                        className={`rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300 ${selectedValue === item.id ? "bg-black text-white" : ""}`}
                         onClick={()=>onClick(item.id)}
                      >
                         {item.name}
-                    </IconButton>
+                    </Button>
                     </div>
                 ))
             }
