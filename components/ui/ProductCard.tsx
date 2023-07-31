@@ -14,7 +14,7 @@ const router = useRouter()
     router.push(`/${data?.category?.id}/${data?.id}`)
   }
   return ( 
-    <div onClick={viewPeoduct} className='bg-white group cursor-pointer rounded-xl border p-3 space-y-4'>
+    <div onClick={viewPeoduct} className='bg-white group cursor-pointer rounded-xl border p-3 space-y-4 hover:scale-[1.18]'>
       {/* product  images and actions */}
          <div className='aspect-square rounded-xl bg-gray-100 relative'>
             <Image src={data.images[0].url} alt='product picture' fill
