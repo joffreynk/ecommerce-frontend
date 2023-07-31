@@ -11,7 +11,7 @@ interface IconButtonProps {
 const IconButton = ({ className, icon, onClick }: IconButtonProps) => (
   <button
     onClick={onClick}
-    className={`rounded-full flex items-center justify-center bg-white border shadow-md p-2 hover:scale-110 transition${className}`}
+    className={`rounded-full flex items-center justify-center bg-white px-3 py-2 border shadow-md p-2 hover:scale-110 transition${className}`}
   >
     {icon}
   </button>

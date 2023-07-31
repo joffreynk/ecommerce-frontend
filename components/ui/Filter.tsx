@@ -43,7 +43,7 @@ const Filter = ({data, name, valueKey}: FilterProps) => {
                 data.map(item=>(
                     <div key={item.id} className="flex items-center">
                         <Button
-                        className={`rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300 ${selectedValue === item.id ? "bg-black text-white" : ""}`}
+                        className={`rounded-md text-sm p-2 ${selectedValue === item.id ? "bg-black text-white" : " bg-white border border-gray-300"}`}
                         onClick={()=>onClick(item.id)}
                      >
                         {item.name}
