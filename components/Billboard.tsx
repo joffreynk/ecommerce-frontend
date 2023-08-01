@@ -1,11 +1,11 @@
-import { Billboard as BillboardTypes } from "@/types"
+import { Billboard as BillboardTypes } from "@/types";
 
-const BillboardPage= ({data}: {data: BillboardTypes}) => {
+const BillboardPage = ({ data }: { data: BillboardTypes }) => {
   return (
     <div className="p-4 sm:p-6 lg:p-8 rounded-xl overflow-hidden">
       <div
         className="rounded-xl relative aspect-square md:aspect-[2.4/1] overflow-hidden bg-cover"
-        style={{backgroundImage: `url(${data?.imgUrl})`}}
+        style={{ backgroundImage: `url(${data?.imgUrl})` }}
       >
         <div className="h-full w-full flex flex-col justify-center items-center gap-y-8">
           <div>
@@ -14,10 +14,9 @@ const BillboardPage= ({data}: {data: BillboardTypes}) => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BillboardPage
+export default BillboardPage;
