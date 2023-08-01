@@ -1,7 +1,23 @@
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation"
+
+
+
 import Button from "./ui/Button"
 import Currency from "./ui/Currency"
+import useCart from "@/hooks/useCart";
 
 const Summary = () => {
+    const searchParams = useSearchParams();
+    const items = useCart((state)=>state.items);
+    const removeAll = useCart((state)=>state.removeAll);
+
+    useEffect(() => {
+
+    }, [])
+
+    const totalPrice = items.reduce((total, item)=>total+Number( item.price), 0);
+    
   return (
     <div className="lg:ml-6 mt-5 lg:mt-0 rounded-xl p-4 lg:col-span-5 bg-slate-100 gap-4 flex flex-col w-full">
       <h3 className="text-xl font-semibold">Order Summary</h3>
@@ -9,7 +25,7 @@ const Summary = () => {
       <div className="flex items-center justify-between">
       <p className="font-semibold text-sm">Total Price</p>
       <p className="font-semibold text-sm">
-        <Currency price={25}/>
+        <Currency price={totalPrice}/>
       </p>
       </div>
       <div>
