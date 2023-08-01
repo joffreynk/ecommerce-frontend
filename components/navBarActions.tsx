@@ -4,8 +4,10 @@ import { ShoppingBag } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import Button from "./ui/Button";
+import useCart from "@/hooks/useCart";
 
 export default function NavBarActions() {
+  const cart = useCart();
   const [isMountend, setIsMountend] = useState(false)
   useEffect(()=>{
     setIsMountend(true)
@@ -20,7 +22,7 @@ export default function NavBarActions() {
           size={25}
           color="white"
          />
-         <span className="text-md font-medium  text-gray-50">10</span>
+         <span className="text-md font-medium  text-gray-50">{cart.items.length}</span>
       </Button>
     </div>
   );

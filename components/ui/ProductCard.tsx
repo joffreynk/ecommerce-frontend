@@ -2,16 +2,18 @@
 
 import { Product } from "@/types";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import IconButton from "./IconButton";
 import { Expand, ShoppingCart } from "lucide-react";
 import Currency from "./Currency";
 import { useRouter } from "next/navigation";
 import PopOver from "./PopOver";
+import useCart from "@/hooks/useCart";
 
 function ProductCard({ data }: { data: Product }) {
   const [viewMore, setViewMore] = useState(false);
   const router = useRouter();
+  const cart = useCart();
 
   const viewPeoduct = () => {
     router.push(`/${data?.category?.id}/${data?.id}`);
@@ -20,6 +22,12 @@ function ProductCard({ data }: { data: Product }) {
   const toggleModel = () => {
     setViewMore(!viewMore);
   };
+
+  const addToCart:  MouseEventHandler<HTMLButtonElement> = (e)=>{
+    e.stopPropagation();
+    cart.addItem(data)
+
+  }
 
   return (
     <>
@@ -47,7 +55,7 @@ function ProductCard({ data }: { data: Product }) {
                 icon={<Expand size={20} className="text-gray-600" />}
               />
               <IconButton
-                onClick={() => {}}
+                onClick={addToCart}
                 icon={<ShoppingCart size={20} className="text-gray-600" />}
               />
             </div>
