@@ -1,12 +1,10 @@
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation"
-
-
+import { toast } from "react-hot-toast";
 
 import Button from "./ui/Button"
 import Currency from "./ui/Currency"
 import useCart from "@/hooks/useCart";
-import { toast } from "react-hot-toast";
 
 const Summary = () => {
     const searchParams = useSearchParams();
@@ -27,16 +25,24 @@ const Summary = () => {
     const totalPrice = items.reduce((total, item)=>total+Number( item.price), 0);
 
     const checkout = async()=>{
+       try{
         const options = {
-            method: "POST",
-            body: JSON.stringify({
-                productIds: items.map((item)=>item.id)
-            })
-        }
+          method: "POST",
+           headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+              productIds: items.map((item)=>item.id)
+          })
+      }
 
-        const response = await fetch(`${process.env.NEXT_STORE_PUBLIC_API}/checkout`, options);
-        const result = await response.json()
-        window.location = result.url;
+      const response = await fetch(`${process.env.NEXT_STORE_PUBLIC_API}/checkout`, options);
+      const result = await response.json()
+      window.location = result.url;
+
+       }catch(error: any){
+        
+      console.log(error.message)
+
+       }
     }
     
   return (

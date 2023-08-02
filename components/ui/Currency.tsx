@@ -8,7 +8,7 @@ function Currency({price}: {price: any}) {
     }, [])
     if(!isMounted) return null;
     
-  return ( <p className='font-semibold self-center'>{formatter.format(price)}</p>)
+  return ( <span className='font-semibold self-center'>{formatter.format(price)}</span>)
 }
 
 export default Currency

@@ -34,7 +34,7 @@ function ProductCard({ data }: { data: Product }) {
       <PopOver viewMore={viewMore} toggleModel={toggleModel} product={data} />
       <div
         onClick={viewPeoduct}
-        className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 hover:scale-[1.18]"
+        className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 hover:scale-[1.11]"
       >
         {/* product  images and actions */}
         <div className="aspect-square rounded-xl bg-gray-100 relative">

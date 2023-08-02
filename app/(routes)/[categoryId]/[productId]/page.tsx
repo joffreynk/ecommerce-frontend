@@ -10,7 +10,7 @@ const SingleProduct = async({params}: {params: {productId: string}}) => {
 
   
   const products = await getProducts({
-    categoryId: product.category.id,
+    categoryId: product?.category?.id,
   });
 
 
@@ -18,7 +18,9 @@ const SingleProduct = async({params}: {params: {productId: string}}) => {
        <Container>
     <div className="px-4 py-10 sm:px-6 lg:px-8">
       <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
-        <ProductComponent product={product} />
+        {
+          product && (<ProductComponent product={product} />)
+        }
         <hr className='my-10 w-full' />
         <ProductList title={`${product?.category?.name}'s related products`} items={products} />
       </div>
