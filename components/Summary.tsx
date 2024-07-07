@@ -34,14 +34,14 @@ const Summary = () => {
           })
       }
 
-      const response = await fetch(`${process.env.NEXT_STORE_PUBLIC_API}/checkout`, options);
+      const response = await fetch(
+        `${process.env.NEXT_STORE_PUBLIC_API}/checkout`,
+        options
+      );
       const result = await response.json()
       window.location = result.url;
-
        }catch(error: any){
-        
       console.log(error.message)
-
        }
     }
     
